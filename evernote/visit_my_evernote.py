@@ -10,11 +10,12 @@ import thrift.protocol.TBinaryProtocol as TBinaryProtocol
 import thrift.transport.THttpClient as THttpClient
 
 
-print "代码演示了如何调用中文Evernote（印象笔记）的API来访问开发者自己的笔记。主要难点是理解Thrift RPC的使用，以及UserStore和NoteStore这两个核心概念"
+print "代码演示了如何调用中文Evernote（印象笔记）的API来访问开发者自己的笔记。"\
+    "主要难点是理解Thrift RPC的使用，以及UserStore和NoteStore这两个核心概念"
 
 # 开发者Token和note_store_url使用你从官方获得的（链接：http://dev.yinxiang.com/documentation/cloud/chapters/Authentication.php#devtoken）
 # user_store_url是通用的
-dev_token = "Fill it with your own token"
+dev_token = "Filled it with your own token"
 user_store_url = "https://app.yinxiang.com/edam/user"
 note_store_url = "https://app.yinxiang.com/shard/s9/notestore"
 
