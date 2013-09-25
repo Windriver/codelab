@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# Copyright 2013, ZhongYi Inc.
+# Date: 2013-9-25
 # Author: Windriver <windriver1986@gmail.com>
 
 from evernote.edam.userstore import UserStore
