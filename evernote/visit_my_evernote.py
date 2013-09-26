@@ -1,7 +1,11 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# Date: 2013-9-25
-# Author: Windriver <windriver1986@gmail.com>
+#
+# Copyright 2013, Not All Rights Reserved.
+# Author:   Windriver
+# Email:    windriver1986@gmail.com
+# Created:  2013-09-26 01:13
+#
+# Description: 
 
 from evernote.edam.userstore import UserStore
 from evernote.edam.notestore import NoteStore
