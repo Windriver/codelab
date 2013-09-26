@@ -1,5 +1,9 @@
-// Copyright 2013, ZhongYi Inc.
-// Author: Windriver <windriver1986@gmail.com>
+// Copyright 2013, Not All Rights Reserved.
+// Author:   Windriver
+// Email:    windriver1986@gmail.com
+// Created:  2013-09-24 02:32
+//
+// Description:
 
 #include <stdlib.h>
 
