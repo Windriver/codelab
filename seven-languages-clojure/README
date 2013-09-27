@@ -1,0 +1,27 @@
+# seven-languages-clojure
+
+使用lein建立一个clojure项目并运行它
+
+
+## Usage
+
+1. 安装lein：
+sudo apt-get install leiningen
+
+2. 新建一个项目，并切换到项目主目录下面：
+lein new seven-languages-clojure
+
+3. 在project.clj中加入一行，指明项目的入口：
+:main seven-languages-clojure.core
+
+4. 在src/seven_languages_clojure/core.clj写个简单的main函数：
+(defn -main "Hello World" [& args] (println "Hello World, lein run successfully"))
+
+5. 执行lein run
+
+
+## License
+
+Copyright (C) 2013, Not All Rights Reserved.
+
+Distributed under the Eclipse Public License, the same as Clojure.
