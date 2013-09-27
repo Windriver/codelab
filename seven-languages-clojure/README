@@ -10,6 +10,7 @@ sudo apt-get install leiningen
 
 2. 新建一个项目，并切换到项目主目录下面：
 lein new seven-languages-clojure
+cd seven-languages-clojure/
 
 3. 在project.clj中加入一行，指明项目的入口：
 :main seven-languages-clojure.core
