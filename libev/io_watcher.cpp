@@ -10,7 +10,7 @@
 
 #include "thirdparty/libev/ev.h"
 
-// 回调函数。当有标准输入有些操作时，被调用。
+// 回调函数。当标准输入写操作时，被调用。
 static void stdin_cb(EV_P_ ev_io* stdin_watcher, int revents) {
   puts("stdin ready");
 
@@ -35,8 +35,8 @@ int main(int argc, char *argv[]) {
   ev_io_start(loop, &stdin_watcher);
 
   // 4.启动loop
-  ev_run (loop, 0);
+  ev_run(loop, 0);
 
-  // 5.到这里了，说明在某回调函数中执行了ev_break。
+  // 7.到这里了，说明在某回调函数中执行了ev_break。
   return EXIT_SUCCESS;
 }
