@@ -1,5 +1,7 @@
-// Copyright 2013, Baidu Inc.
-// Author: Zhong Yi <zhongyi01@baidu.com>
+// Copyright 2013, Not All Rights Reserved.
+// Author:   Windriver
+// Email:    windriver1986@gmail.com
+// Created:  2013-09-28 18:10
 //
 // Description:
 
@@ -34,7 +36,7 @@ bool HttpServer::Run() {
     CHECK(m_is_inited);
 
     boost::asio::ip::tcp::socket socket(m_io_service);
-    m_acceptor.async_accept(m_socket,
+    m_acceptor.async_accept(socket,
                             boost::bind(&HttpServer::ToString, this,
                                         boost::asio::placeholders::error));
 

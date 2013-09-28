@@ -1,5 +1,7 @@
-// Copyright 2013, Baidu Inc.
-// Author: Zhong Yi <zhongyi01@baidu.com>
+// Copyright 2013, Not All Rights Reserved.
+// Author:   Windriver
+// Email:    windriver1986@gmail.com
+// Created:  2013-09-28 18:10
 //
 // Description:
 
