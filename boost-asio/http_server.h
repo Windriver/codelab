@@ -24,6 +24,7 @@ public:
   bool HttpServer::Init(const std::string& ip, const std::string& port);
   bool Run();
 
+private:
   void HandleRequest(const boost::system::error_code& e);
 
 private:
