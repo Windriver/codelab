@@ -6,7 +6,6 @@ cc_library (
     deps = [
         '//thirdparty/boost:boost',
         '//thirdparty/glog:glog',
-        '//toft/base/string:_number',
     ],
 )
 

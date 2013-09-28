@@ -12,23 +12,23 @@
 
 class HttpServerTest : public ::testing::Test {
 protected:
-    virtual void SetUp() {
-    }
-    virtual void TearDown() {
-    }
+  virtual void SetUp() {
+  }
+  virtual void TearDown() {
+  }
 };
 
 TEST_F(HttpServerTest, SimpleCase) {
-    HttpServer server;
-    ASSERT_TRUE(server.Init("0.0.0.0", 12333));
+  HttpServer server;
+  ASSERT_TRUE(server.Init("0.0.0.0", 12333));
 
-    ASSERT_TRUE(server.Run());
+  ASSERT_TRUE(server.Run());
 
 }
 
 int main(int argc, char *argv[]) {
-    testing::InitGoogleTest(&argc, argv);
-    FLAGS_v = 31;
+  testing::InitGoogleTest(&argc, argv);
+  FLAGS_v = 31;
 
-    return RUN_ALL_TESTS();
+  return RUN_ALL_TESTS();
 }

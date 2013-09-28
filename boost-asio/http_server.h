@@ -15,22 +15,22 @@
 
 class HttpServer {
 public:
-    HttpServer() :
-        m_is_inited(false),
-        m_acceptor(m_io_service)
-    {}
-    ~HttpServer();
+  HttpServer() :
+    m_is_inited(false),
+    m_acceptor(m_io_service)
+  {}
+  ~HttpServer();
 
-    bool Init(const std::string& ip, int port);
-    bool Run();
+  bool HttpServer::Init(const std::string& ip, const std::string& port);
+  bool Run();
 
-    void ToString(const boost::system::error_code& e);
+  void HandleRequest(const boost::system::error_code& e);
 
 private:
-    bool m_is_inited;
+  bool m_is_inited;
 
-    boost::asio::io_service m_io_service;
-    boost::asio::ip::tcp::acceptor m_acceptor;
+  boost::asio::io_service m_io_service;
+  boost::asio::ip::tcp::acceptor m_acceptor;
 };
 
 #endif  // CODELAB_BOOST-ASIO_HTTP_SERVER_H_

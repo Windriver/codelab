@@ -9,44 +9,43 @@
 
 #include "thirdparty/boost/bind.hpp"
 #include "thirdparty/glog/logging.h"
-#include "toft/base/string/number.h"
 
 HttpServer::~HttpServer() {
 
-    m_is_inited = false;
+  m_is_inited = false;
 }
 
-bool HttpServer::Init(const std::string& ip, int port) {
-    CHECK(!m_is_inited);
+bool HttpServer::Init(const std::string& ip, const std::string& port) {
+  CHECK(!m_is_inited);
 
-    // Init acceptor
-    boost::asio::ip::tcp::resolver resolver(m_io_service);
-    boost::asio::ip::tcp::resolver::query query(ip, toft::IntegerToString(port));
-    boost::asio::ip::tcp::endpoint endpoint = *resolver.resolve(query);
-    m_acceptor.open(endpoint.protocol());
-    m_acceptor.set_option(boost::asio::ip::tcp::acceptor::reuse_address(true));
-    m_acceptor.bind(endpoint);
-    m_acceptor.listen();
+  // Init acceptor
+  boost::asio::ip::tcp::resolver resolver(m_io_service);
+  boost::asio::ip::tcp::resolver::query query(ip, port);
+  boost::asio::ip::tcp::endpoint endpoint = *resolver.resolve(query);
+  m_acceptor.open(endpoint.protocol());
+  m_acceptor.set_option(boost::asio::ip::tcp::acceptor::reuse_address(true));
+  m_acceptor.bind(endpoint);
+  m_acceptor.listen();
 
-    m_is_inited = true;
-    return true;
+  m_is_inited = true;
+  return true;
 }
 
 bool HttpServer::Run() {
-    CHECK(m_is_inited);
+  CHECK(m_is_inited);
 
-    boost::asio::ip::tcp::socket socket(m_io_service);
-    m_acceptor.async_accept(socket,
-                            boost::bind(&HttpServer::ToString, this,
-                                        boost::asio::placeholders::error));
+  boost::asio::ip::tcp::socket socket(m_io_service);
+  m_acceptor.async_accept(socket,
+                          boost::bind(&HttpServer::HandleRequest, this,
+                                      boost::asio::placeholders::error));
 
-    VLOG(10) << "Http server is running";
+  VLOG(10) << "Http server is running";
 
-    m_io_service.run();
+  m_io_service.run();
 
-    return true;
+  return true;
 }
 
-void HttpServer::ToString(const boost::system::error_code& e) {
-    LOG(INFO) << "Hehe";
+void HttpServer::HandleRequest(const boost::system::error_code& e) {
+  LOG(INFO) << "Hehe";
 }
